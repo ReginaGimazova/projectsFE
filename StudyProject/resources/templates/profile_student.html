@@ -1,0 +1,107 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Вход</title>
+    <link rel="stylesheet" href="../../resources/static/css/profile.css">
+</head>
+
+<body>
+<div class="wrapper">
+    <div class="box header">
+        <div class="title">STUDY</div>
+        <div class="nav_link_left"><a href="/">Профиль</a></div>
+        <div class="nav_link_right"><a href="/">Выйти</a></div>
+    </div>
+    <div class="box sidebar">
+        <div class="item"><a href="/">Курсы</a></div>
+        <div class="item"><a href="/">Летняя практика</a></div>
+        <div class="item"><a href="/">Лаборатории</a></div>
+    </div>
+    <div class="box content">
+        <div class="left">
+            <img src="https://bouve.northeastern.edu/nurseinnovation/wp-content/uploads/2017/03/userprofile.png">
+        </div>
+
+        <button data-toggle="modal" data-targer="#myModalEditProfile" id="open_modal_edit">Редактировать</button>
+        <div class="name_of_value">
+            <div class="name">ФИО</div>
+            <div class="name">курс</div>
+            <div class="name">группа</div>
+            <div class="name">языки программирования</div>
+            <div class="name">почта</div>
+            <div class="name">телефон</div>
+        </div>
+        <div class="values">
+            <div class="value">Фамилия Имя Отчество</div>
+            <div class="value">курс</div>
+            <div class="value">группа</div>
+            <div class="value">Java, JavaScript, PHP</div>
+            <div class="value">почта</div>
+            <div class="value">телефон</div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="modal fade" id="myModalEditProfile" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Редактирование профиля</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form id="form1" name="form1" method="post" action="/profile/student/edit">
+                            <div class="form-group">
+                                <label for="surname">Фамилия</label>
+                                <input type="text" id="surname" name="surname">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="name">Имя</label>
+                                <input type="text" id="name" name="name">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="middle_name">Отчество</label>
+                                <input type="text" id="middle_name" name="middle_name">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="numOfCourse">Курс</label>
+                                <input type="number" id="numOfCourse" name="numOfCourse">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="numOfGroup">Группа</label>
+                                <input type="text" id="numOfGroup" name="numOfGroup">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="telephoneNumber">Номер телефона</label>
+                                <input type="text" id="telephoneNumber" name="telephoneNumber">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="e_mail">E-mail</label>
+                                <input type="text" id="e_mail" name="e_mail">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" form="form1" class="btn">Отправить</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $('#open_modal_edit').click(function(){
+        $('#myModalEditProfile').modal({show:true})
+    });
+</script>
+</body>
+</html>

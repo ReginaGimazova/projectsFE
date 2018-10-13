@@ -1,0 +1,125 @@
+body {
+    margin: 10px;
+    background-color: #edeef0;
+}
+
+.header {
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 600px 300px 310px 100px 50px 100px;
+}
+
+.nav_link_left{
+    grid-area: nav_link_left;
+    grid-column: 4;
+    grid-row: 1;
+    font-size: 1.3rem;
+    padding: 5px;
+}
+
+.nav_link_right{
+    grid-area: nav_link_right;
+    grid-column: 6;
+    grid-row: 1;
+    font-size: 1.3rem;
+    padding: 5px;
+}
+
+.title{
+    grid-area: title;
+    grid-row: 1;
+    grid-column: 2;
+    text-align: center;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.wrapper {
+    background-color: #edeef0;
+    color: #444;
+}
+.wrapper {
+    display: grid;
+    grid-gap: 1em;
+    grid-template-areas:
+            "header"
+            "sidebar"
+            "content"
+}
+
+@media only screen and (min-width: 500px)  {
+    .wrapper {
+        grid-template-columns: 20% auto;
+        grid-template-areas:
+                "header   header"
+                "content  content";
+    }
+}
+
+@media only screen and (min-width: 600px)   {
+    .wrapper {
+        grid-gap: 20px;
+        grid-template-columns: 330px 570px 570px;
+        grid-template-rows:  50px  500px;
+        grid-template-areas:
+                "header  header  header"
+                "content content content";
+    }
+}
+.box {
+    background-color: white;
+    border-radius: 2px;
+    padding: 10px;
+    font-size: 150%;
+}
+
+.header{
+    background-color: white;
+}
+
+.content{
+    grid-area: content;
+    display: grid;
+    grid-template-columns: 150px 1190px 150px;
+}
+.box_center{
+    grid-area: box_center;
+    grid-gap: 10px;
+    display: grid;
+    grid-column: 2;
+    grid-row: 1;
+    grid-template-rows: 50px auto;
+}
+h3{
+    grid-row: 1;
+}
+tr{
+    grid-template-columns: 600px 400px 200px;
+    grid-template-rows: repeat(auto-fill, 40px);
+    display: grid;
+}
+.col{
+    background-color: white;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+.col1, .col2, .col3{
+    padding: 5px;
+}
+
+.col3> a{
+    border: none;
+    color: #336d33;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+th{
+    font-weight: normal;
+}
+
+th, td{
+    text-align: center;
+}

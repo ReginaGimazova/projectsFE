@@ -1,0 +1,82 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="../../resources/static/css/stylesheet.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="box header">
+            <div class="title">STUDY</div>
+            <div class="nav_link_left"><a href="/">Профиль</a></div>
+            <div class="nav_link_right"><a href="/">Выйти</a></div>
+        </div>
+        <div class="content">
+            <div class="box_center">
+                <h3>Курс по выбору: Название курса</h3>
+                <table id="table">
+                    <tr class="col_title">
+                        <th class="col col1" style="cursor: pointer" onclick="sortTable(1)">ФИО студента</th>
+                        <th class="col col2">группа</th>
+                        <th class="col col_label"> + / - </th>
+                    </tr>
+
+                  
+                    <tr>
+                        <td class="col col1">Фамилия Имя Отчество</td>
+                        <td class="col col2">номер группы</td>
+                        <td class="col col3">
+                            <a class="deleteStudentFromCourse" href="/">исключить</a>
+                            <a class="addStudentToCourse" href="/">добавить</a>
+                        </td>
+                    </tr>
+                 
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function sortTable(n) {
+            var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+            table = document.getElementById("table");
+            switching = true;
+            dir = "asc";
+
+            while (switching) {
+                switching = false;
+                rows = table.getElementsByTagName("TR");
+
+                for (i = 1; i < (rows.length - 1); i++) {
+                    shouldSwitch = false;
+
+                    x = rows[i].getElementsByTagName("TD")[n];
+                    y = rows[i + 1].getElementsByTagName("TD")[n];
+
+                    if (dir === "asc") {
+                        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                            shouldSwitch= true;
+                            break;
+                        }
+                    } else if (dir === "desc") {
+                        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                            shouldSwitch= true;
+                            break;
+                        }
+                    }
+                }
+                if (shouldSwitch) {
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    switching = true;
+                    switchcount ++;
+                } else {
+                    if (switchcount === 0 && dir === "asc") {
+                        dir = "desc";
+                        switching = true;
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

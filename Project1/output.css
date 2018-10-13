@@ -1,0 +1,144 @@
+.login-form, .footer-content, .content, .container {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-nav, .graphics, nav, header {
+  display: flex;
+  flex-direction: row;
+}
+
+body {
+  background-color: #B8A89E;
+}
+
+header {
+  margin-bottom: 50px;
+}
+
+nav {
+  flex: 8;
+  justify-content: space-around;
+  margin-right: 60%;
+}
+
+.menu-link {
+  font-family: "Gotham SSm", sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 1.3em 2.5em;
+  color: white;
+}
+
+.login-button {
+  flex: 1;
+  margin-right: 0;
+  background-color: black;
+  color: white;
+  border: none;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+.graphics {
+  width: 70%;
+  height: 500px;
+  background-color: #ececec;
+}
+
+.context {
+  display: flex;
+  justify-content: space-around;
+}
+
+.content {
+  flex: 3;
+  height: inherit;
+  background-color: black;
+  color: white;
+  font-family: "Gotham SSm", sans-serif;
+  animation-name: background-opacity;
+  animation-iteration-count: infinite;
+  animation-duration: 10s;
+  overflow-y: auto;
+}
+
+.content p, .content h3 {
+  margin: 20px;
+  text-align: justify;
+}
+
+@keyframes background-opacity {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+.image {
+  flex: 5;
+  display: flex;
+}
+
+.footer-nav {
+  justify-content: space-around;
+  margin: 0 30%;
+  padding: 50px 0;
+}
+
+.footer-content {
+  padding: 10px 20px;
+  font-family: "Gotham SSm", sans-serif;
+  font-size: 13px;
+}
+
+.footer-content p {
+  font-weight: 500;
+}
+.footer-content a {
+  font-weight: 300;
+  color: #333333;
+  margin-bottom: 10px;
+}
+
+.login-container {
+  margin-top: 10%;
+}
+
+.login-form {
+  align-items: center;
+}
+
+.login-input {
+  width: 30%;
+  line-height: 25px;
+  margin-bottom: 15px;
+  padding: 5px 10px;
+  font-family: "Gotham SSm", sans-serif;
+  font-size: 15px;
+}
+
+.login-title {
+  text-align: center;
+  font-family: "Gotham SSm", sans-serif;
+  font-size: 20px;
+}
+
+.submit-login {
+  width: 10%;
+  font-family: "Gotham SSm", sans-serif;
+  font-weight: bold;
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+}
+
+/*# sourceMappingURL=output.css.map */
